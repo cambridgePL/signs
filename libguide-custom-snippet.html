@@ -1,0 +1,42 @@
+<style>
+ body {width:100%; height:100%; overflow:auto; margin:0; font-family:franklin-gothic-urw, Helvetica, Arial, "Nimbus Sans L", sans-serif; }
+.s-lg-title { font-size: 18px ;}
+.s-lg-title a { font-size: 24px; }
+button.slick-prev.slick-arrow::before {display:none;}
+button.slick-next.slick-arrow::before {display: none;}
+.s-lg-rss-list { list-style: none; }
+.fa-external-link { visibility: hidden; }
+.s-lg-rss-links { visibility: hidden; }
+ hr { display:none; }
+</style>
+<script type="text/javascript">
+$(function() {
+  var p = (document.location+"").indexOf("admin");
+  var isAdmin = p > -1 ? true : false;
+  var  createDelayedTicker = function(ms,attempt){
+    var t = setTimeout("location.reload(true);",60000*10);
+    setTimeout(function() {
+      console.log("Attempt #" + attempt + " to create ticker" );
+      var rssCount = $('.s-lg-rss ul li').length;
+      console.log( "rss items: " + rssCount);
+      if ( rssCount > 0 ) {
+          console.log("Creating ticker!");
+          $('.s-lg-rss').easyTicker({ interval: 9500, speed: 2500 });
+      }  else {
+          if ( attempt <= 2 ) {
+            createDelayedTicker(ms,attempt+1);
+          } else {
+            console.log("Giving up on ticker.");
+          }
+      }
+    }, ms);
+  };
+  if (!isAdmin) {
+    console.log("removing scrollbars...");
+    $("body").css("overflow","hidden");
+    $( "#s-lg-guide-tabs-title-bar" ).remove();
+    createDelayedTicker(2000,0);
+  }
+});
+
+</script>
