@@ -1,0 +1,110 @@
+body {
+    margin:0px;
+    background-image:none;
+    position:static;
+    left:auto;
+    width:1366px;
+    margin-left:0;
+    margin-right:0;
+    text-align:left;
+    padding:0px;
+    font-family : Arial, Helvetica, Sans-Serif;
+    font-style:normal;
+    font-size:27px;
+    font-weight: 400;
+    color:#FFFFFF;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "kern" 1;
+    -webkit-font-feature-settings: "kern";
+    -moz-font-feature-settings: "kern";
+    -moz-font-feature-settings: "kern=1";
+    font-kerning: normal;
+    word-wrap:break-word;
+    line-height: normal;
+}
+
+
+#cpl-header-div {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width:1366px;
+    height: 85px;
+    background-color: rgba(198, 9, 59, 1);
+}
+
+#cpl-logo-img {
+    width: 237px;
+    height: 59px;
+    margin-left: 41px;
+    margin-top: 14px;
+}
+
+#cpl-logo-div {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 85px;
+}
+
+#cpl-dtw-div {
+    position: absolute;
+    top: 0px;
+    left: 1250px;
+    width: 85px;
+
+}
+
+
+#cpl-events-div {
+    position: absolute;
+    top: 85px;
+    left: 0px;
+    width:  828px;
+    height: 682px;
+    background-color: rgba(21, 116, 147, 1);
+}
+
+h3.s-lc-ea-h3 { display: none; }
+table.s-lc-ea-tb { display: none; }
+
+#cpl-events-header {
+    font-family:'Raleway-Bold', 'Raleway Bold', 'Raleway';
+    font-size: 48px;
+    font-weight:700;
+    margin-top: 14px;
+    margin-left: 41px;
+}
+
+.cpl-event {
+    font-family:'Raleway-Regular', 'Raleway';
+    font-size: 27px;
+    font-weight: 400;
+    margin-top: 14px;
+    margin-left: 41px;
+}
+
+.cpl-event-title {
+    font-family:'Raleway-Bold', 'Raleway Bold', 'Raleway';
+    font-size: 31px;
+    font-weight: 600;
+}
+
+.cpl-event-today {
+    font-family:'Raleway-Medium', 'Raleway Medium', 'Raleway';
+    font-size: 27px;
+    font-weight: 500;
+}
+
+.cpy-event-date {
+
+}
+
+
+#cpl-poster-div {
+    position: absolute;
+    top: 85px;
+    left: 828px;
+    width: 538px;
+    height: 682px;
+}
