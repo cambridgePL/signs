@@ -33,7 +33,7 @@ $(function(){
 	    success: function(weather) {
 		html = '&nbsp;| ' + weather.temp + '&deg;' + weather.units.temp;
 		$("#cpl-weather").html(html);
-		$("#cpl-weather-image").html('<img src="'+ weather.thumbnail + '"/>');
+		$("#cpl-weather-image").html('<i class="wi wi-yahoo-'+ weather.code + '"/></i>');
 	    },
 	    error: function(error) {
 		$("#cpl-weather").html('<p>'+error+'</p>');
