@@ -21,6 +21,7 @@ body {
     font-kerning: normal;
     word-wrap:break-word;
     line-height: normal;
+    overflow: hidden;
 }
 
 
