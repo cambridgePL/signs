@@ -1,5 +1,8 @@
 $(function(){
 
+    // reload page every 10 minutes.
+    var t = setTimeout("location.reload(true);",60000*10);
+    
     var insertFloor = function(location, rooms, floor) {
 	$.each(rooms, function(i, room) { 
             location = location.replace(room,room+ ' (' + floor + ')');
@@ -9,10 +12,10 @@ $(function(){
     
     var mungeLocation = function(loc) {
 	loc = insertFloor(loc, ['Community Room', 'Lecture Hall'],
-			  'Lower Level,  L2');
+			  'L2');
 	loc = insertFloor(loc, ['Beech Room'], 'Ground Floor');
 	loc = insertFloor(loc, ['Rindge Room'], '1st Floor');
-	loc = insertFloor(loc, ['Curious George Room', 'Rey Room'], '3rd Floor)');
+	loc = insertFloor(loc, ['Curious George Room', 'Rey Room'], '3rd Floor');
 	return loc;
     };
 
@@ -51,11 +54,16 @@ $(function(){
     });
     console.log(events);
     // use data to generate more attractive html and display it.
+    var column = 0;
     $.each(events, function (i, e) {
+	if ( i >= 3 ) {
+	    column = 1;
+	}
+	console.log("column: " + column);
 	$('<div/>', {
 	    id: e.id,
 	    class: 'cpl-event'
-	}).appendTo('#cpl-events-div');
+	}).appendTo('#cpl-events-column-'+column);
 	$('<div>',{
 	    id: e.id + '-title',
 	    class: 'cpl-event-title',
