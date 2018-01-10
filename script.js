@@ -24,6 +24,23 @@ $(function(){
 	$('#cpl-date').html(dateString);
 	setTimeout(updateDT, 500);
     };
+
+    var updateWeather = function(){
+	$.simpleWeather({
+	    location: 'Cambridge, MA',
+	    woeid: '',
+	    unit: 'f',
+	    success: function(weather) {
+		html = '&nbsp;| ' + weather.temp + '&deg;' + weather.units.temp;
+		$("#cpl-weather").html(html);
+		$("#cpl-weather-image").html('<img src="'+ weather.thumbnail + '"/>');
+	    },
+	    error: function(error) {
+		$("#cpl-weather").html('<p>'+error+'</p>');
+	    }
+	});
+    }
+
     
     var insertFloor = function(location, rooms, floor) {
 	$.each(rooms, function(i, room) { 
@@ -56,6 +73,7 @@ $(function(){
     // reload page every 10 minutes.
     setTimeout("location.reload(true);",60000*10);
     setTimeout(updateDT, 500);
+    updateWeather();
     
     var e = undefined;
     var events = [];

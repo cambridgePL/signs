@@ -61,6 +61,16 @@ body {
     font-size:24px;
 }
 
+
+#cpl-weather {
+    float: right;
+    font-family:'Raleway-Bold', 'Raleway Bold', 'Raleway';
+    font-weight:700;
+    font-style:normal;
+    font-size:24px;    
+}
+
+
 #cpl-date {
     float: right;
     font-size: 24px;
@@ -68,7 +78,10 @@ body {
     font-family: 'MuseoSans-300', 'Museo Sans 300', 'Museo Sans 500', 'Museo Sans';
 }
 
-
+#cpl-weather-image {
+    float: right;
+    margin-top: 13px;
+}
 
 #cpl-events-div {
     position: absolute;
