@@ -92,8 +92,10 @@ $(function(){
     });
     $.each(events, function (i, e) {
 	// clean up events
-	e.location = mungeLocation(e.location);
-	e.date = mungeDate(e.date);
+	if ( e.location ) {
+	    e.location = mungeLocation(e.location);
+	    e.date = mungeDate(e.date);
+	}
     });
     // use data to generate more attractive html and display it.
     var column = 0;
@@ -119,9 +121,11 @@ $(function(){
 	    id: e.time + '-time',
 	    text: e.time,
 	}).appendTo('#'+e.id);
-	$('<div>',{
-	    id: e.location + '-location',
-	    text: e.location,
-	}).appendTo('#'+e.id);
+	if ( e.location ) {
+	    $('<div>',{
+		id: e.location + '-location',
+		text: e.location,
+	    }).appendTo('#'+e.id);
+	}
     });
 });
