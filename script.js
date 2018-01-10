@@ -1,7 +1,29 @@
 $(function(){
 
-    // reload page every 10 minutes.
-    var t = setTimeout("location.reload(true);",60000*10);
+    var formatAMPM = function(date) {
+	var hours = date.getHours();
+	var minutes = date.getMinutes();
+	var ampm = hours >= 12 ? 'pm' : 'am';
+	hours = hours % 12;
+	hours = hours ? hours : 12; 
+	minutes = minutes < 10 ? '0'+minutes : minutes;
+	var strTime = hours + ':' + minutes + ' ' + ampm;
+	return strTime;
+    }
+    
+    var updateDT = function(){
+	var now = new Date();
+	var weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+	var months = ["January", "February", "March", "April", "May", "June",
+		      "July", "August", "September", "October", "November", "December"
+		     ];
+	var timeString = formatAMPM(now);
+	var dateString = weekdays[now.getDay()] + ', ' +
+	    months[now.getMonth()] + ' ' + now.getDate()
+	$('#cpl-time').html(timeString);
+	$('#cpl-date').html(dateString);
+	setTimeout(updateDT, 500);
+    };
     
     var insertFloor = function(location, rooms, floor) {
 	$.each(rooms, function(i, room) { 
@@ -22,7 +44,6 @@ $(function(){
     var mungeDate = function(dateString) {
 	var date = new Date(Date.parse(dateString));
 	var today = new Date();
-	console.log("DateString: " + dateString + " = " , date);
 	if (date.toDateString() === today.toDateString()) {
 	    dateString = 'Today';
 	} else {
@@ -30,18 +51,20 @@ $(function(){
 	}
 	return dateString;
     };
+
+
+    // reload page every 10 minutes.
+    setTimeout("location.reload(true);",60000*10);
+    setTimeout(updateDT, 500);
     
     var e = undefined;
     var events = [];
-    console.log($('.s-lc-ea-h3').text());
     // grab data from (hidden) springshare html table
     $('.s-lc-ea-tb tr').each(function (i, row) {
-	console.log('Hello row ' + i);
 	var $row = $(row);
 	var $tds = $row.find('td');
 	var key = $tds.eq(0).text().replace(':','').toLowerCase();
 	var value = $tds.eq(1).text();
-	console.log('Hello row ' + key + ":" + value);
 	if ( key === 'title' ){
 	    e = {};
 	    e.id = 'cpl-event-' + events.length;
@@ -54,14 +77,12 @@ $(function(){
 	e.location = mungeLocation(e.location);
 	e.date = mungeDate(e.date);
     });
-    console.log(events);
     // use data to generate more attractive html and display it.
     var column = 0;
     $.each(events, function (i, e) {
 	if ( i >= 3 ) {
 	    column = 1;
 	}
-	console.log("column: " + column);
 	$('<div/>', {
 	    id: e.id,
 	    class: 'cpl-event'

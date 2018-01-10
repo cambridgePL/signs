@@ -48,11 +48,27 @@ body {
 }
 
 #cpl-dtw-div {
-    position: absolute;
-    top: 0px;
-    left: 1250px;
-    width: 85px;
+    margin-top: 13px;
+    margin-right: 14px;
+    float: right;
 }
+
+#cpl-time {
+    float: right;
+    font-family:'Raleway-Bold', 'Raleway Bold', 'Raleway';
+    font-weight:700;
+    font-style:normal;
+    font-size:24px;
+}
+
+#cpl-date {
+    float: right;
+    font-size: 24px;
+    font-weight: 200;
+    font-family: 'MuseoSans-300', 'Museo Sans 300', 'Museo Sans 500', 'Museo Sans';
+}
+
+
 
 #cpl-events-div {
     position: absolute;
