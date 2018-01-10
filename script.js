@@ -25,6 +25,8 @@ $(function(){
 	console.log("DateString: " + dateString + " = " , date);
 	if (date.toDateString() === today.toDateString()) {
 	    dateString = 'Today';
+	} else {
+	    dateString = dateString.replace(/, \d{4}$/,'');
 	}
 	return dateString;
     };
