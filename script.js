@@ -61,6 +61,7 @@ $(function(){
     var mungeDate = function(dateString) {
 	var date = new Date(Date.parse(dateString));
 	var today = new Date();
+	console.log("Does : " + date.toDateString() + ' ===  ' +  today.toDateString());
 	if (date.toDateString() === today.toDateString()) {
 	    dateString = 'Today';
 	} else {
@@ -94,9 +95,10 @@ $(function(){
 	// clean up events
 	if ( e.location ) {
 	    e.location = mungeLocation(e.location);
-	    e.date = mungeDate(e.date);
 	}
+	e.date = mungeDate(e.date);
     });
+    console.log(events);
     // use data to generate more attractive html and display it.
     var column = 0;
     $.each(events, function (i, e) {
