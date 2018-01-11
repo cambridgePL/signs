@@ -34,7 +34,7 @@ body {
 #cpl-logo-img {
     width: 237px;
     height: 59px;
-    margin-left: 41px;
+    margin-left: 31px;
     margin-top: 14px;
 }
 
@@ -100,17 +100,17 @@ table.s-lc-ea-tb { display: none; }
     font-size: 48px;
     font-weight:700;
     margin-top: 28px;
-    margin-left: 41px;
+    margin-left: 31px;
 }
 
 #cpl-events-column-0 {
-    width: 400px;
+    width: 390px;
     float: left;
 }
 
 #cpl-events-divider {
     float: left;
-    margin-left: 25px;
+    margin-left: 0px;
     margin-top: 30px;
 }
 
@@ -125,7 +125,7 @@ table.s-lc-ea-tb { display: none; }
     font-weight: 400;
     margin-top: 14px;
     margin-bottom: 25px;
-    margin-left: 41px;
+    margin-left: 31px;
 }
 
 .cpl-event-title {
