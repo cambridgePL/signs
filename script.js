@@ -72,7 +72,7 @@ $(function(){
 
 
     // reload page every 10 minutes.
-    setTimeout("location.reload(true);",60000*1);
+    setTimeout("location.reload(true);",60000*10);
     setTimeout(updateDT, 500);
     updateWeather();
     
