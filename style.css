@@ -1,16 +1,16 @@
 body {
     margin:0px;
     background-image:none;
+    background-color: red;
     position:static;
     left:auto;
-    width:100%;
     margin-left:0;
     margin-right:0;
     text-align:left;
     padding:0px;
     font-family : Arial, Helvetica, Sans-Serif;
     font-style:normal;
-    font-size:27px;
+    font-size:33px;
     font-weight: 400;
     color:#FFFFFF;
     text-rendering: optimizeLegibility;
@@ -27,15 +27,16 @@ body {
 
 #cpl-header-div {
     width:100%;
-    height: 85px;
+    height: 120px;
+    margin-right: 0px;
     background-color: rgba(198, 9, 59, 1);
 }
 
 #cpl-logo-img {
-    width: 237px;
-    height: 59px;
-    margin-left: 31px;
-    margin-top: 14px;
+    width: 332px;
+    height: 83px;
+    margin-left: 45px;
+    margin-top: 21px;
 }
 
 #cpl-logo-div {
@@ -46,8 +47,8 @@ body {
 }
 
 #cpl-dtw-div {
-    margin-top: 14px;
-    margin-right: 5px;
+    margin-top: 21px;
+    margin-right: 7px;
     float: right;
 }
 
@@ -56,7 +57,7 @@ body {
     font-family:'Raleway-Bold', 'Raleway Bold', 'Raleway';
     font-weight:700;
     font-style:normal;
-    font-size:24px;
+    font-size:33px;
 }
 
 
@@ -65,22 +66,22 @@ body {
     font-family:'Raleway-Bold', 'Raleway Bold', 'Raleway';
     font-weight:700;
     font-style:normal;
-    font-size:24px;    
+    font-size:33px;    
 }
 
 
 #cpl-date {
     float: right;
-    font-size: 24px;
+    font-size: 33px;
     font-weight: 200;
     font-family: 'MuseoSans-300', 'Museo Sans 300', 'Museo Sans 500', 'Museo Sans';
 }
 
 #cpl-weather-image {
     float: right;
-    margin-top: 14px;
-    margin-right: 14px;
-    margin-left: 14px;
+    margin-top: 21px;
+    margin-right: 21px;
+    margin-left: 21px;
 }
 
 #cpl-events-div {
@@ -88,7 +89,7 @@ body {
     margin-left:0px;
     margin-top: 0px;
     width:  100%;
-    height: 682px;
+    height: 960px;
     background-color: rgba(21, 116, 147, 1);
 }
 
@@ -97,46 +98,46 @@ table.s-lc-ea-tb { display: none; }
 
 #cpl-events-header {
     font-family:'Raleway-Bold', 'Raleway Bold', 'Raleway';
-    font-size: 48px;
+    font-size: 58px;
     font-weight:700;
     margin-top: 28px;
-    margin-left: 31px;
+    margin-left: 45px;
 }
 
-#cpl-events-column-0 {
-    width: 390px;
+.cpl-events-column {
+    width: 535px;
     float: left;
 }
 
 #cpl-events-divider {
     float: left;
-    margin-left: 0px;
-    margin-top: 30px;
+    margin-top: 50px;
+    margin-left: 21px;
+    margin-right:21px;
 }
 
-#cpl-events-column-1 {
-    width: 400px;
-    float: left;
+#cpl-line {
+    height: 750px;
 }
 
 .cpl-event {
     font-family:'Raleway-Regular', 'Raleway';
-    font-size: 27px;
+    font-size: 35px;
     font-weight: 400;
-    margin-top: 14px;
-    margin-bottom: 25px;
-    margin-left: 31px;
+    margin-top: 33px;
+    margin-bottom: 33px;
+    margin-left: 45px;
 }
 
 .cpl-event-title {
     font-family:'Raleway-Bold', 'Raleway Bold', 'Raleway';
-    font-size: 31px;
+    font-size: 42px;
     font-weight: 600;
 }
 
 .cpl-event-today {
     font-family:'Raleway-Medium', 'Raleway Medium', 'Raleway';
-    font-size: 27px;
+    font-size: 35px;
     font-weight: 500;
 }
 
@@ -148,8 +149,7 @@ table.s-lc-ea-tb { display: none; }
 #cpl-poster-div {
     position: absolute;
     right: 0px;
-    top: 85px;
-
-    width: 538px;
-    height: 682px;
+    top: 120px;
+    width: 761px;
+    height: 960px;
 }

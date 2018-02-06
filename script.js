@@ -130,4 +130,13 @@ $(function(){
 	    }).appendTo('#'+e.id);
 	}
     });
+    var wh = $(window).height();
+    var ww = $(window).width();
+    var ph = wh-120;
+    var pw = ph / 1.26;
+    //$('#cpl-poster-div').css('height', ph);
+    //$('#cpl-poster-div').css('width' , pw);
+    //$('#cpl-events-div').css('height', ph);
+    //alert("Window: " + wh + "," +  ww +  " poster:  " +  ph + "," + pw);
+    
 });
