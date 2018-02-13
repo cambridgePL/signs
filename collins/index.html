@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>CPL Digital Sign: Main</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,400i,500,600,600i,700,700i" type="text/css" rel="stylesheet"/> 
+    <link rel="stylesheet" href="//lgapi-us.libapps.com/web/css1.21.5/springshare.common.min.css" />
+    <link href="../style.css" type="text/css" rel="stylesheet"/>
+    <link href="../weather-icons/css/weather-icons.min.css" type="text/css" rel="stylesheet"/>
+  </head>
+
+  <body>
+
+    <div id="cpl-header-div">
+      <div id="cpl-logo-div">
+	<img id="cpl-logo-img" src="../images/logo.png" />
+      </div>
+      <div id="cpl-weather-image"></div>
+      <div id="cpl-dtw-div">
+	<div id="cpl-tw"><span id="cpl-weather"></span><span id="cpl-time"></span></div>
+	<div id="cpl-date"></div>
+      </div>
+    </div>
+      
+    <div id="cpl-events-div">
+      <div id="cpl-events-header">Events at the Collins Branch Library</div>
+      <div id="cpl-events-column-0" class="cpl-events-column"></div>
+      <div id="cpl-events-divider"><img id="cpl-line" src="../images/line.png"/></div>
+      <div id="cpl-events-column-1" class="cpl-events-column"></div>
+      <div id="api_upc_cid7052_7090_iid3963"></div>
+      <script type="text/javascript" src="https://api3.libcal.com/api_events.php?iid=3963&m=upc&cid=7052_7090&c=3787&d=&l=6&context=object&format=js"> </script>
+    </div>
+    
+    <div id="cpl-poster-div">
+
+      <!-- poster widget, minus some css -->
+      <script type="text/javascript" src="//lgapi-us.libapps.com/web/jquery/js/1.12.1_jquery.min.js"></script>
+      <script type="text/javascript" src="//lgapi-us.libapps.com/web/jquery/js/1.9.2_jquery-ui.min.js"></script>
+      <script type="text/javascript" src="//lgapi-us.libapps.com/web/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="//lgapi-us.libapps.com/web/js1.21.5/springshare.public.min.js"></script>
+      <script type="text/javascript" src="//lgapi-us.libapps.com/web/js1.21.5/springshare.common.min.js"></script>
+      <script type="text/javascript" src="//lgapi-us.libapps.com/web/js1.21.5/common/springspace_sui_helptip.js"></script>
+      <!-- removed css was here... -->
+      <link href="//lgapi-us.libapps.com/web/css1.21.5/common/springspace_sui_helptip.css" rel="stylesheet"><script src="//lgapi-us.libapps.com/sa.php?site_id=11992" onload="jQuery(window).on("load", function() {springSpace.springTrack.init({_st_site_id: '11992'});});"></script>
+      <script>springSpace.Common = springSpace.Common || { };
+	springSpace.Common.constant = { PROCESSING: { ACTION_DISPLAY_POLL: 159}};
+	springSpace.Common.baseURL = "//lgapi-us.libapps.com/";
+	springSpace.Common.apiLoad = true;</script><script>
+	springshare_widget_config_1515238545360 = { path: 'boxes/17351497' };
+      </script>
+      <div id="s-lg-widget-1515238545360"></div>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://lgapi-us.libapps.com/widgets.php?site_id=11992&widget_type=8&output_format=1&widget_title=Poster+Box&widget_height=250&widget_width=100%25&widget_embed_type=1&guide_id=756977&box_id=17351497&map_id=20417542&content_only=0&config_id=1515238545360";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","s-lg-widget-script-1515238545360");</script>
+
+
+<!-- widget cleanup -->
+<style>
+button.slick-prev.slick-arrow::before {display:none;}
+button.slick-next.slick-arrow::before {display: none;}
+#s-lib-cpane-20417542 { margin: 0px; }
+#s-lg-box-17351502 {
+    background-color: rgba(21, 116, 147, 1);
+}
+</style>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.1.0/jquery.simpleWeather.min.js"></script>
+<script type="text/javascript" src="../script.js"> </script>      
+
+    </div>
+  </body>
+</html>
