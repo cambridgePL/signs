@@ -61,7 +61,7 @@ $(function(){
     var mungeDate = function(dateString) {
 	var date = new Date(Date.parse(dateString));
 	var today = new Date();
-	console.log("Does : " + date.toDateString() + ' ===  ' +  today.toDateString());
+	//console.log("Does : " + date.toDateString() + ' ===  ' +  today.toDateString());
 	if (date.toDateString() === today.toDateString()) {
 	    dateString = 'Today';
 	} else {
@@ -70,7 +70,37 @@ $(function(){
 	return dateString;
     };
 
-
+    
+    var getBranchName = function(title){
+	var url = window.location.href;
+	var branches = [
+	    ['boudreau', 'Boudreau'],
+	    ['collins', 'Collins'],
+	    ['csq', 'Central Square'],
+	    ['oneill', "O'Neill"],
+	    ['oconnell', "O'Connell"]
+	];
+	var branchName;
+	console.log("Reinosr rides again...");
+	branches.forEach(function(branch){
+	    console.log("Branchs is " , branch);
+	    if (url.indexOf(branch[0]) > -1){
+		branchName = branch[1];
+		console.log("branchName is: " + branchName);
+	    }
+	});
+	console.log("Returning branchName : " + branchName);
+	return branchName;
+    };
+    
+    var mungeTitle = function(title){
+	var branchName = getBranchName();
+	if (branchName){
+	    title = title.replace(branchName,"");
+	}
+	return title;
+    };
+    
     // reload page every 10 minutes.
     setTimeout("location.reload(true);",60000*10);
     setTimeout(updateDT, 500);
@@ -85,6 +115,7 @@ $(function(){
 	var key = $tds.eq(0).text().replace(':','').toLowerCase();
 	var value = $tds.eq(1).text();
 	if ( key === 'title' ){
+	    value = mungeTitle(value);
 	    e = {};
 	    e.id = 'cpl-event-' + events.length;
 	    events.push(e);
