@@ -36,7 +36,9 @@ $(function(){
 		$("#cpl-weather-image").html('<i class="wi wi-yahoo-'+ weather.code + '"/></i>');
 	    },
 	    error: function(error) {
-		$("#cpl-weather").html('<p>'+error+'</p>');
+		console.log("Error getting weather data");
+		console.log(error);
+		$("#cpl-weather").html('<p>'+'</p>');
 	    }
 	});
     }
