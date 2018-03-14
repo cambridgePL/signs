@@ -1,3 +1,7 @@
+
+
+
+
 $(function(){
 
     var formatAMPM = function(date) {
@@ -27,8 +31,7 @@ $(function(){
 
     var updateWeather = function(){
 	$.simpleWeather({
-	    location: 'Cambridge, MA',
-	    woeid: '',
+	    woeid: '12758737', // woeid for cambridge ma
 	    unit: 'f',
 	    success: function(weather) {
 		html = '&nbsp;| ' + weather.temp + '&deg;' + weather.units.temp;
