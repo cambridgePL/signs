@@ -86,7 +86,6 @@ $(function(){
 	    ['oconnell', "O'Connell"]
 	];
 	var branchName;
-	console.log("Reinosr rides again...");
 	branches.forEach(function(branch){
 	    console.log("Branchs is " , branch);
 	    if (url.indexOf(branch[0]) > -1){
@@ -103,6 +102,7 @@ $(function(){
 	if (branchName){
 	    title = title.replace(branchName,"");
 	}
+	title = title.replace("()","");
 	return title;
     };
     
