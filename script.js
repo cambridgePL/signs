@@ -57,7 +57,7 @@ $(function(){
     var mungeLocation = function(loc) {
 	loc = insertFloor(loc, ['Community Room', 'Lecture Hall'],
 			  'L2');
-	loc = insertFloor(loc, ['Beech Room'], 'Ground Floor');
+	loc = insertFloor(loc, ['Beech Room', 'Rossi Room'], 'Ground Floor');
 	loc = insertFloor(loc, ['Rindge Room'], '1st Floor');
 	loc = insertFloor(loc, ['Curious George Room', 'Rey Room'], '3rd Floor');
 	return loc;
