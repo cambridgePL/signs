@@ -140,7 +140,7 @@ $(function(){
     // use data to generate more attractive html and display it.
     var column = 0;
     $.each(events, function (i, e) {
-	if ( i >= 3 ) {
+	if ( i >= (events.length/2) ) {
 	    column = 1;
 	}
 	$('<div/>', {
