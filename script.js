@@ -84,7 +84,8 @@ $(function(){
 	    ['collins', 'Collins'],
 	    ['csq', 'Central Square'],
 	    ['oneill', "O'Neill"],
-	    ['oconnell', "O'Connell"]
+	    ['oconnell', "O'Connell"],
+	    ['valente', 'Valente' ]
 	];
 	var branchName;
 	branches.forEach(function(branch){
