@@ -7,9 +7,50 @@
     <link rel="stylesheet" href="//lgapi-us.libapps.com/web/css1.21.5/springshare.common.min.css" />
     <link href="../style.css" type="text/css" rel="stylesheet"/>
     <link href="../weather-icons/css/weather-icons.min.css" type="text/css" rel="stylesheet"/>
+      <!-- what's my screen resolution: 1235*2195 -->
     <style>
       body { background-color: rgba(21, 116, 147, 1); }
-      #cpl-line {    height: 1050px; }
+
+      #cpl-line {    height: 0px; }
+
+      #cpl-poster-div {
+      position: absolute;
+      left: 0px;
+      top: 120px;
+      width: 1235px;
+      height: 1603px;
+      }
+      
+      #cpl-events-div {
+      position: absolute;
+      top: 1700px;
+      margin-left:0px;
+      margin-top: 0px;
+      
+      width:  1235px;
+      height: 200px;
+      background-color: rgba(21, 116, 147, 1);
+      }
+      
+.cpl-events-column {
+      width: 610px;
+      
+
+}
+      #cpl-events-header {
+      position: absolute;
+      top: 1653px;
+      text-align: center;
+    font-family:'Raleway-Bold', 'Raleway Bold', 'Raleway';
+    font-size: 58px;
+    font-weight:700;
+    margin-top: 28px;
+    margin-left: 45px;
+}
+
+
+
+
       </style>
   </head>
 
@@ -27,11 +68,12 @@
     </div>
       
     <div id="cpl-events-div">
-      <div id="cpl-events-header">Events at the Valente Library</div>
+      <div id="cpl-events-header">Events at Valente *</div>
       <div id="cpl-events-column-0" class="cpl-events-column"></div>
       <div id="cpl-events-divider"><img id="cpl-line" src="../images/line.png"/></div>
       <div id="cpl-events-column-1" class="cpl-events-column"></div>
-      <div id="api_upc_cid7052_7090_iid3963"></div><script type="text/javascript" src="https://api3.libcal.com/api_events.php?iid=3963&m=upc&cid=7052_7090&c=5687&d=&l=10&context=object&format=js"> </script>      
+      <div id="cpl-events-divider"><img id="cpl-line" src="../images/line.png"/></div>
+      <div id="api_upc_cid7052_7090_iid3963"></div><script type="text/javascript" src="https://api3.libcal.com/api_events.php?iid=3963&m=upc&cid=7052_7090&c=5687&d=&l=4&context=object&format=js"> </script>      
     </div>
     
     <div id="cpl-poster-div">
@@ -53,6 +95,9 @@
 	springSpace.Common.apiLoad = true;</script><script>
 	springshare_widget_config_1515238545360 = { path: 'boxes/17351497' };
       </script>
+      <div id="s-lg-widget-1515238545360"></div>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://lgapi-us.libapps.com/widgets.php?site_id=11992&widget_type=8&output_format=1&widget_title=Poster+Box&widget_height=250&widget_width=100%25&widget_embed_type=1&guide_id=756977&box_id=17351497&map_id=20417542&content_only=0&config_id=1515238545360";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","s-lg-widget-script-1515238545360");</script>
+
 
 
 <!-- widget cleanup -->

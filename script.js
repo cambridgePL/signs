@@ -112,6 +112,11 @@ $(function(){
     setTimeout("location.reload(true);",60000*10);
     setTimeout(updateDT, 500);
     updateWeather();
+    var columnCount = 2;
+    if ($('#cpl-events-column-2').length>0){
+	columnCount = 3;
+    }
+
     
     var e = undefined;
     var events = [];
@@ -140,9 +145,15 @@ $(function(){
     // use data to generate more attractive html and display it.
     var column = 0;
     $.each(events, function (i, e) {
-	if ( i >= (events.length/2) ) {
+	var eventsPerColumn = events.length/columnCount;
+	if ( i >= eventsPerColumn ) {
 	    column = 1;
+	    if ( i >= eventsPerColumn*2) {
+		column = 2;
+	    }
 	}
+	console.log("Event: " + i + " Column: " + column + " columnCount: " + columnCount + " eventsPerColumn: " + eventsPerColumn);
+
 	$('<div/>', {
 	    id: e.id,
 	    class: 'cpl-event'
