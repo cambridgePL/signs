@@ -85,14 +85,14 @@ $(function(){
 	    ['csq', 'Central Square'],
 	    ['oneill', "O'Neill"],
 	    ['oconnell', "O'Connell"],
-	    ['valente', 'Valente' ]
+	    ['valente', 'Valente' ],
+	    ['Online', 'Online' ]
 	];
-	var branchName;
+	var branchName = "Online";
 	branches.forEach(function(branch){
 	    console.log("Branchs is " , branch);
 	    if (url.indexOf(branch[0]) > -1){
 		branchName = branch[1];
-		console.log("branchName is: " + branchName);
 	    }
 	});
 	console.log("Returning branchName : " + branchName);
@@ -102,21 +102,20 @@ $(function(){
     var mungeTitle = function(title){
 	var branchName = getBranchName();
 	if (branchName){
-	    title = title.replace(branchName,"");
+	    title = title.replace("("+branchName+")","");
 	}
-	title = title.replace("()","");
+	title = title.replace(/\(virtual\)/i,"");
+	title = title;
 	return title;
     };
     
     // reload page every 10 minutes.
     setTimeout("location.reload(true);",60000*10);
     setTimeout(updateDT, 500);
-    updateWeather();
     var columnCount = 2;
     if ($('#cpl-events-column-2').length>0){
 	columnCount = 3;
     }
-
     
     var e = undefined;
     var events = [];
@@ -136,8 +135,15 @@ $(function(){
     });
     $.each(events, function (i, e) {
 	// clean up events
-	if ( e.location ) {
-	    e.location = mungeLocation(e.location);
+	var loc = e.location;
+	console.log(e);
+	console.log("REINOS 0: loc: " + loc);
+	if ( e.branches === 'Online'){
+	    loc = 'Online';
+	}
+	console.log("REINOS 1: loc: " + loc);
+	if ( loc ) {
+	    e.location = mungeLocation(loc);
 	}
 	e.date = mungeDate(e.date);
     });
