@@ -133,6 +133,15 @@ table.s-lc-ea-tb { display: none; }
     font-family:'Raleway-Bold', 'Raleway Bold', 'Raleway';
     font-size: 42px;
     font-weight: 600;
+
+    overflow:hidden;
+    -webkit-box-orient: vertical;
+    display: block;
+    display: -webkit-box;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    
 }
 
 .cpl-event-today {
