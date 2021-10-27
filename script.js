@@ -101,11 +101,13 @@ $(function(){
     };
     
     var mungeTitle = function(title){
+	// get rid of parenthetical branch indicators in title.
 	var branchName = getBranchName();
 	if (branchName){
 	    title = title.replace("("+branchName+")","");
 	}
 	title = title.replace(/\(virtual\)/i,"");
+	title = title.replace(/\(main\)/i,"");
 	title = title;
 	return title;
     };
