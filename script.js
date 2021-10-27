@@ -185,6 +185,7 @@ $(function(){
 	    $('<div>',{
 		id: e.location + '-location',
 		text: e.location,
+		class: 'cpl-event-' + (e.location === 'Online' ? 'online' : 'onsite'),
 	    }).appendTo('#'+e.id);
 	}
     });

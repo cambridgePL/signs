@@ -150,6 +150,10 @@ table.s-lc-ea-tb { display: none; }
     font-weight: 500;
 }
 
+.cpl-event-online {
+    color: #ffff00;
+}
+
 .cpy-event-date {
 
 }
