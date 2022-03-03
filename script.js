@@ -91,7 +91,7 @@ $(function(){
 	];
 	var branchName = "Online";
 	branches.forEach(function(branch){
-	    console.log("Branchs is " , branch);
+	    //console.log("Branchs is " , branch);
 	    if (url.indexOf(branch[0]) > -1){
 		branchName = branch[1];
 	    }
@@ -122,29 +122,38 @@ $(function(){
     
     var e = undefined;
     var events = [];
-    // grab data from (hidden) springshare html table
-    $('.s-lc-ea-tb tr').each(function (i, row) {
-	var $row = $(row);
-	var $tds = $row.find('td');
-	var key = $tds.eq(0).text().replace(':','').toLowerCase();
-	var value = $tds.eq(1).text();
-	if ( key === 'title' ){
-	    value = mungeTitle(value);
-	    e = {};
-	    e.id = 'cpl-event-' + events.length;
-	    events.push(e);
-	}
-	e[key]=value;
+    console.log("REINOS: Hello!");
+    // note: this is no longer a table! 2022-03-03
+    // grab data from (hidden) springshare html element
+    // and turn into datastructure we can use for our own html.
+    $('.s-lc-ea-tb').each(function (i, eventDiv) {
+	var $eventDiv  = $(eventDiv);
+	console.log($eventDiv);
+	e= {};
+	$eventDiv.children().each(function (ii, kvDiv) {
+	    $kvDiv = $(kvDiv);
+	    var $keyDiv = $($kvDiv.find("div")[0]);
+	    var $valDiv = $($kvDiv.find("div")[1]);
+	    var key   = $keyDiv.text().replace(':','').toLowerCase();
+	    var value = $valDiv.text();
+	    if ( key === 'title' ){
+		value = mungeTitle(value);
+		e.id = 'cpl-event-' + events.length;
+	    }
+	    e[key]=value;
+	});
+	events.push(e);
     });
+    
     $.each(events, function (i, e) {
 	// clean up events
 	var loc = e.location;
 	console.log(e);
-	console.log("REINOS 0: loc: " + loc);
+	//console.log("REINOS 0: loc: " + loc);
 	if ( e.branches === 'Online'){
 	    loc = 'Online';
 	}
-	console.log("REINOS 1: loc: " + loc);
+	//console.log("REINOS 1: loc: " + loc);
 	if ( loc ) {
 	    e.location = mungeLocation(loc);
 	}
@@ -193,6 +202,10 @@ $(function(){
     var ww = $(window).width();
     var ph = wh-120;
     var pw = ph / 1.26;
+
+
+    $('#api_upc_cid7052_15922_7090_iid3963').hide();
+    
     //$('#cpl-poster-div').css('height', ph);
     //$('#cpl-poster-div').css('width' , pw);
     //$('#cpl-events-div').css('height', ph);
