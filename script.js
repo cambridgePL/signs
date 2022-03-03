@@ -4,6 +4,12 @@
 
 $(function(){
 
+
+
+    $('#api_upc_cid7052_15922_7090_iid3963').hide();
+    $('#api_upc_cid7052_7090_iid3963').hide();
+
+    
     var formatAMPM = function(date) {
 	var hours = date.getHours();
 	var minutes = date.getMinutes();
@@ -203,8 +209,6 @@ $(function(){
     var ph = wh-120;
     var pw = ph / 1.26;
 
-
-    $('#api_upc_cid7052_15922_7090_iid3963').hide();
     
     //$('#cpl-poster-div').css('height', ph);
     //$('#cpl-poster-div').css('width' , pw);
