@@ -93,6 +93,10 @@ body {
     background-color: rgba(21, 116, 147, 1);
 }
 
+#cpl-events-div a {
+    color: White;
+}
+
 h3.s-lc-ea-h3 { display: none; }
 table.s-lc-ea-tb { display: none; }
 
