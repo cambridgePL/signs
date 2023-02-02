@@ -10,7 +10,7 @@ body {
     padding:0px;
     font-family : Arial, Helvetica, Sans-Serif;
     font-style:normal;
-    font-size:33px;
+    font-size:60px;
     font-weight: 400;
     color:#FFFFFF;
     text-rendering: optimizeLegibility;
@@ -126,7 +126,7 @@ table.s-lc-ea-tb { display: none; }
 
 .cpl-event {
     font-family:'Raleway-Regular', 'Raleway';
-    font-size: 50px;
+    font-size: 35px;
     font-weight: 400;
     margin-top: 33px;
     margin-bottom: 33px;
