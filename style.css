@@ -122,7 +122,7 @@ table.s-lc-ea-tb { display: none; }
 
 .cpl-event {
     font-family:'Raleway-Regular', 'Raleway';
-    font-size: 60px;
+    font-size: 35px;
     font-weight: 400;
     margin-top: 33px;
     margin-bottom: 33px;
@@ -131,7 +131,7 @@ table.s-lc-ea-tb { display: none; }
 
 .cpl-event-title {
     font-family:'Raleway-Bold', 'Raleway Bold', 'Raleway';
-    font-size: 60px;
+    font-size: 42px;
     font-weight: 600;
 
     overflow:hidden;
