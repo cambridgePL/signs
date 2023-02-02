@@ -152,6 +152,7 @@ table.s-lc-ea-tb { display: none; }
 
 .cpl-event-online {
     color: #ffff00;
+    text-decoration: none;
 }
 
 .cpy-event-date {
