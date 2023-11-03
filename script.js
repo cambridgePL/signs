@@ -30,7 +30,7 @@ $(function(){
     };
 
 
-    // reload page every 10 minutes. // was line 115 1/3/23
+    // reload page every 10 minutes. // was line 115 and moved up 11/3/23
     setTimeout("location.reload(true);",60000*10);
     setTimeout(updateDT, 500);
     var columnCount = 2;
