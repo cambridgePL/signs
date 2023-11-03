@@ -29,22 +29,32 @@ $(function(){
 	setTimeout(updateDT, 500);
     };
 
-    var updateWeather = function(){
-	$.simpleWeather({
-	    woeid: '12758737', // woeid for cambridge ma
-	    unit: 'f',
-	    success: function(weather) {
-		html = '&nbsp;| ' + weather.temp + '&deg;' + weather.units.temp;
-		$("#cpl-weather").html(html);
-		$("#cpl-weather-image").html('<i class="wi wi-yahoo-'+ weather.code + '"/></i>');
-	    },
-	    error: function(error) {
-		console.log("Error getting weather data");
-		console.log(error);
-		$("#cpl-weather").html('<p>'+'</p>');
-	    }
-	});
+
+    // reload page every 10 minutes. // was line 115 1/3/23
+    setTimeout("location.reload(true);",60000*10);
+    setTimeout(updateDT, 500);
+    var columnCount = 2;
+    if ($('#cpl-events-column-2').length>0){
+	columnCount = 3;
     }
+    
+	
+    // 11-3-2023 commented out:var updateWeather = function(){
+	// 11-3-2023 commented out:$.simpleWeather({
+	    // 11-3-2023 commented out:woeid: '12758737', // woeid for cambridge ma
+	    // 11-3-2023 commented out:unit: 'f',
+	    // 11-3-2023 commented out:success: function(weather) {
+		// 11-3-2023 commented out:html = '&nbsp;| ' + weather.temp + '&deg;' + weather.units.temp;
+		// 11-3-2023 commented out:$("#cpl-weather").html(html);
+		// 11-3-2023 commented out:$("#cpl-weather-image").html('<i class="wi wi-yahoo-'+ weather.code + '"/></i>');
+	   // 11-3-2023 commented out: },
+	    // 11-3-2023 commented out:error: function(error) {
+		// 11-3-2023 commented out:console.log("Error getting weather data");
+		// 11-3-2023 commented out:console.log(error);
+		// 11-3-2023 commented out:$("#cpl-weather").html('<p>'+'</p>');
+	    // 11-3-2023 commented out:}
+	// 11-3-2023 commented out:});
+    // 11-3-2023 commented out:}
 
     
     var insertFloor = function(location, rooms, floor) {
@@ -112,14 +122,7 @@ $(function(){
 	return title;
     };
     
-    // reload page every 10 minutes.
-    setTimeout("location.reload(true);",60000*10);
-    setTimeout(updateDT, 500);
-    var columnCount = 2;
-    if ($('#cpl-events-column-2').length>0){
-	columnCount = 3;
-    }
-    
+  
     var e = undefined;
     var events = [];
     // grab data from (hidden) springshare html table
