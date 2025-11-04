@@ -64,5 +64,75 @@ button.slick-next.slick-arrow::before {display: none;}
 <script type="text/javascript" src="../script.js"> </script>      
 
     </div>
+
+
+    <!-- Added code: Hive open message logic and styling (only addition requested) -->
+    <style>
+      #hive-open-message {
+        font-family: Raleway, Arial, sans-serif;
+        font-weight: 600;
+        font-size: 28px;
+        color: #ffffff;
+        background: rgba(21,116,147,0.95);
+        padding: 12px 16px;
+        margin: 12px 20px;
+        border-radius: 4px;
+        display: none;
+        text-align: center;
+      }
+    </style>
+
+    <div id="hive-open-message">The Hive Makerspace is OPEN! Come join us downstairs on L1</div>
+
+    <script>
+      (function() {
+        function isHiveOpen(date) {
+          var day = date.getDay(); // 0 Sun,1 Mon,...6 Sat
+          var hour = date.getHours();
+          var minute = date.getMinutes();
+
+          // convert to minutes since midnight for precise bounds if needed
+          var nowMins = hour * 60 + minute;
+
+          // schedule in minutes [start, end) where times are local
+          var schedule = {
+            1: { start: 13 * 60, end: 17 * 60 }, // Mon 1PM-5PM
+            2: { start: 13 * 60, end: 21 * 60 }, // Tue 1PM-9PM
+            3: { start: 13 * 60, end: 21 * 60 }, // Wed 1PM-9PM
+            4: { start: 9 * 60,  end: 21 * 60 }, // Thu 9AM-9PM
+            5: { start: 9 * 60,  end: 17 * 60 }, // Fri 9AM-5PM
+            6: { start: 9 * 60,  end: 17 * 60 }  // Sat 9AM-5PM
+          };
+
+          var hours = schedule[day];
+          if (!hours) return false;
+          return nowMins >= hours.start && nowMins < hours.end;
+        }
+
+        function updateHiveMessage() {
+          var msgEl = document.getElementById('hive-open-message');
+          if (!msgEl) return;
+          var now = new Date();
+          if (isHiveOpen(now)) {
+            msgEl.style.display = 'block';
+            // insert the message below the upcoming events container if not already positioned there
+            var eventsDiv = document.getElementById('cpl-events-div');
+            if (eventsDiv && msgEl.parentNode !== eventsDiv.parentNode) {
+              // place message immediately after the events div
+              eventsDiv.parentNode.insertBefore(msgEl, eventsDiv.nextSibling);
+            }
+          } else {
+            msgEl.style.display = 'none';
+          }
+        }
+
+        // initial check
+        updateHiveMessage();
+
+        // update every minute to catch open/close changes
+        setInterval(updateHiveMessage, 60 * 1000);
+      })();
+    </script>
+
   </body>
 </html>
